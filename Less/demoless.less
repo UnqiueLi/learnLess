@@ -1,7 +1,10 @@
+//声明变量
 @nice-red:#f40;
 .div1{
   color: @nice-red;
+  //混合调用
   .border;
+  //带参数的混合调用
   .radius(10px);
 }
 .border{
@@ -10,6 +13,7 @@
 	border-bottom: 5px solid #bbb;
 	border-right: 5px solid #aaa;
 }
+//带参数的混合声明
 .radius(@value){
 	border-radius: @value; 
 	-webkit-border-radius: @value;
@@ -17,3 +21,58 @@
 	-o-border-radius: @value;
 	-ms-border-radius: @value;
 } 
+//带参数的混合声明
+.margin-top(@topValue:10px){
+	margin-top: @topValue;
+}
+.section-a{
+  .section(300px)
+}
+.section-b{
+  .section(800px;right);
+}
+.section(@width,@float: left){
+	width: @width;
+	float: @float;
+	box-shadow: 0 0 5px #666;
+	padding: 20px;
+	background-color: #fff;
+	.radius(10px);
+    .margin-top;
+}
+.clear{
+	clear: both;
+}
+//三角
+//默认三角向下
+.sanjiao-style(@_ ; @width;@color: #000;){
+	border-width: @width;
+	border-color: @color transparent transparent transparent;
+	border-style: solid dashed dashed dashed;
+}
+.sanjiao-style(bottom;@width;@color: pink;){
+	border-width: @width;
+	border-color: @color transparent transparent transparent;
+	border-style: solid dashed dashed dashed;
+}
+.sanjiao-style(left;@width;@color: red;){
+	border-width: @width;
+	border-color:  transparent @color transparent transparent;
+	border-style:  dashed solid dashed dashed;
+}
+.sanjiao-style(top;@width;@color: green;){
+	border-width: @width;
+	border-color:  transparent transparent  @color transparent;
+	border-style:  dashed  dashed solid dashed ;
+}
+.sanjiao-style(right;@width;@color: blue;){
+	border-width: @width;
+	border-color:  transparent  transparent transparent @color;
+	border-style:  dashed  dashed dashed solid;
+}
+.sanjiao{
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	.sanjiao-style(ddd;10px);
+}
