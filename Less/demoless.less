@@ -1,0 +1,19 @@
+@nice-red:#f40;
+.div1{
+  color: @nice-red;
+  .border;
+  .radius(10px);
+}
+.border{
+	border-top: 5px solid #f99;
+	border-left: 5px solid #ded;
+	border-bottom: 5px solid #bbb;
+	border-right: 5px solid #aaa;
+}
+.radius(@value){
+	border-radius: @value; 
+	-webkit-border-radius: @value;
+	-moz-border-radius: @value;
+	-o-border-radius: @value;
+	-ms-border-radius: @value;
+} 
