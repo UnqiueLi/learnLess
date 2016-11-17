@@ -1,5 +1,15 @@
 //声明变量
 @nice-red:#f40;
+@backgroundColor:pink;
+body{
+	background-color: @backgroundColor;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
 .div1{
   color: @nice-red;
   //混合调用
@@ -76,3 +86,39 @@
 	overflow: hidden;
 	.sanjiao-style(ddd;10px);
 }
+.list{
+	width: 50%;
+	.section(600px);
+	li{
+		background-image:url('../images/list-bg.png');
+		background-repeat: no-repeat;
+		background-position: 0 50%; 
+		line-height: 32px;
+		text-indent: 2em;
+		&:hover a,&:hover span{
+		color: #f00;
+	}
+	}
+	a,span{
+	 	color: #666;
+	}
+	/*& li:hover a,& li:hover span{
+		color: #f00;
+	}*/
+}
+/*.list li{
+		background-image:url('../images/list-bg.png');
+		background-repeat: no-repeat;
+		background-position: 0 50%; 
+		line-height: 32px;
+		text-indent: 2em;
+}*/
+/*.list li a{
+color: #666;
+}
+.list li span{
+	color: #666;
+}*/
+/*.list li:hover a,.list li:hover span{
+	color: #f00;
+}*/
